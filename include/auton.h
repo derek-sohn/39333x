@@ -35,8 +35,8 @@
 
 extern void driveTurn(int target);
 extern void driveTurn2(int target);
-extern void driveStraight(int target);
-extern void driveStraight2(int target);
+extern void driveStraight(int target, int speed);
+extern void driveStraight2(int target, int speed);
 extern void driveArcL(double theta, double radius, int timeout);
 extern void driveArcLF(double theta, double radius, int timeout);
 extern void driveArcR(double theta, double radius, int timeout);
