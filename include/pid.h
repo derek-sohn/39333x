@@ -29,21 +29,31 @@
 #define ARC_KI 0
 #define ARC_KD 0
 
-#define ARC_INTEGRAL_KI 40
-#define ARC_MAX_INTEGRAL 14.5
+#define ARC_HEADING_INTEGRAL_KI 40
+#define ARC_HEADING_MAX_INTEGRAL 14.5
+
+
+#define ARC_HEADING_KP 20
+#define ARC_HEADING_KI 0
+#define ARC_HEADING_KD 20
 
 
 extern void driveTurn(int target);
 extern void driveTurn2(int target);
-extern void driveStraight(int target);
-extern void driveStraight2(int target);
+extern void driveStraight(int target, int speed);
+extern void driveStraight2(int target, int speed);
 extern void driveArcL(double theta, double radius, int timeout);
-extern void driveArcLF(double theta, double radius, int timeout);
+extern void driveArcLF(double theta, double radius, int timeout, int speed = 100);
 extern void driveArcR(double theta, double radius, int timeout);
-extern void driveArcRF(double theta, double radius, int timeout);
+extern void driveArcRF(double theta, double radius, int timeout, int speed = 100);
 extern void driveStraightC(int target);
 extern void setConstants(double kp, double ki, double kd);
 extern double calcPID(double target, double input, int integralKi, int maxIntegral);
-extern  int LBMacro;
+// extern  int LBMacro;
+extern void driveClamp(int target, int clampDistance, int speed = 100);
+extern void Intakes(int voltage);
+
+
+extern void resetEncoders();
 
 #endif
